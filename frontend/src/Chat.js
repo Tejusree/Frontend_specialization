@@ -6,10 +6,9 @@ import Picker from "emoji-picker-react";
 function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
-
   const [showPicker, setShowPicker] = useState(false);
- 
-  const onEmojiClick = (event, emojiObject) => {
+
+  const onEmojiClick = (emojiObject) => {
     setCurrentMessage(prevInput => prevInput + emojiObject.emoji);
     setShowPicker(false);
   };
@@ -18,7 +17,7 @@ function Chat({ socket, username, room }) {
     if (currentMessage !== "") {
       const messageData = {
         room: room,
-        author: username,
+        owner: username,
         message: currentMessage,
         time:
           new Date(Date.now()).getHours() +
@@ -49,15 +48,15 @@ function Chat({ socket, username, room }) {
             return (
               <div
                 className="message"
-                id={username === messageContent.author ? "you" : "other"}
+                id={username === messageContent.owner ? "you" : "other"}
               >
                 <div>
                   <div className="message-content">
-                    <p style={{padding: "5px"}}>{messageContent.message}</p>
+                    <p style={{ padding: "5px" }}>{messageContent.message}</p>
                   </div>
-                  <div className="message-meta">
+                  <div className="message-details">
                     <p id="time">{messageContent.time}</p>
-                    <p id="author">{messageContent.author}</p>
+                    <p id="owner">{messageContent.owner}</p>
                   </div>
                 </div>
               </div>
@@ -66,7 +65,7 @@ function Chat({ socket, username, room }) {
         </ScrollToBottom>
       </div>
       <div className="chat-footer">
-      <img
+        <img
           className="emoji-icon"
           src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
           onClick={() => setShowPicker(val => !val)} />
@@ -85,7 +84,7 @@ function Chat({ socket, username, room }) {
           }}
         />
         <button onClick={sendMessage}>&#9658;</button>
-       
+
       </div>
     </div>
   );

@@ -68,7 +68,7 @@ body {
   background: #117fcd;
   position: relative;
   cursor: pointer;
-  margin-top: 65px;
+  margin-top: 10px;
 }
 .chat-window .chat-header p {
   display: block;
@@ -80,10 +80,9 @@ body {
 }
 
 .chat-window .chat-body {
-  /* height: calc(450px - (45px + 70px)); */
   border: 2px solid #263238;
   background: white;
-  height: 450px;
+  height: 466px;
   position: relative;
   background-color: rgb(232, 238, 236);
 }
@@ -129,7 +128,7 @@ body {
   justify-content: flex-start;
 }
 
-#you .message-meta {
+#you .message-details {
   justify-content: flex-start;
   margin-left: 5px;
 }
@@ -143,17 +142,17 @@ body {
   background-color: rgb(99, 145, 230);
 }
 
-#other .message-meta {
+#other .message-details {
   justify-content: flex-end;
   margin-right: 5px;
 }
 
-.message-meta #author {
+.message-details #owner {
   margin-left: 10px;
   font-weight: bold;
 }
 
-.chat-window .chat-body .message .message-meta {
+.chat-window .chat-body .message .message-details {
   display: flex;
   font-size: 12px;
 }
