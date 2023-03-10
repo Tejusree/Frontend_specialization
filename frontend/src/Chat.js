@@ -7,8 +7,8 @@ function Chat({ socket, username, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
   const [messageList, setMessageList] = useState([]);
   const [showPicker, setShowPicker] = useState(false);
-
-  const onEmojiClick = (emojiObject) => {
+ 
+  const onEmojiClick = (event, emojiObject) => {
     setCurrentMessage(prevInput => prevInput + emojiObject.emoji);
     setShowPicker(false);
   };
@@ -52,7 +52,7 @@ function Chat({ socket, username, room }) {
               >
                 <div>
                   <div className="message-content">
-                    <p style={{ padding: "5px" }}>{messageContent.message}</p>
+                    <p style={{padding: "5px"}}>{messageContent.message}</p>
                   </div>
                   <div className="message-details">
                     <p id="time">{messageContent.time}</p>
@@ -65,7 +65,7 @@ function Chat({ socket, username, room }) {
         </ScrollToBottom>
       </div>
       <div className="chat-footer">
-        <img
+      <img
           className="emoji-icon"
           src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
           onClick={() => setShowPicker(val => !val)} />
@@ -84,7 +84,7 @@ function Chat({ socket, username, room }) {
           }}
         />
         <button onClick={sendMessage}>&#9658;</button>
-
+       
       </div>
     </div>
   );
