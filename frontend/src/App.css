@@ -72,7 +72,7 @@ body {
 }
 .chat-window .chat-header p {
   display: block;
-  padding: 0 1em 0 2em;
+  padding: 0 1em 0 1em;
   color: #fff;
   font-weight: 700;
   line-height: 45px;
@@ -208,4 +208,14 @@ body {
   border: 1px solid black;
   cursor: pointer;
   background-color: white
+}
+
+#welcomeMsg{
+  background-color: #faf8f8;
+  margin: 10px;
+  color: rgb(10, 10, 10);
+  border-radius: 5px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding: 5px;
 }
