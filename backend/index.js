@@ -15,7 +15,7 @@ const io = new Server(server, {
 });
 
 io.on("connection", (socket) => {
-  console.log(`User Connected: ${socket.id}`);
+  console.log(`User Connected with ID: ${socket.id}`);
 
   socket.on("join_room", (data) => {
     socket.join(data);
@@ -32,5 +32,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(3001, () => {
-  console.log("SERVER RUNNING");
+  console.log("Server is running on port 3001 !");
 });
