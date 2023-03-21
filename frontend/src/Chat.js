@@ -56,7 +56,7 @@ function Chat({ socket, username, room }) {
                   </div>
                   <div className="message-details">
                     <p id="time">{messageContent.time}</p>
-                    <p id="owner">{messageContent.owner}</p>
+                    <p id="owner">{messageContent.owner===username?("you"):(messageContent.owner)}</p>
                   </div>
                 </div>
               </div>

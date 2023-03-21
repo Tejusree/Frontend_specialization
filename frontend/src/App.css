@@ -122,29 +122,29 @@ body {
 }
 
 #you {
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 #you .message-content {
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 #you .message-details {
-  justify-content: flex-start;
+  justify-content: flex-end;
   margin-left: 5px;
 }
 
 #other {
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 #other .message-content {
-  justify-content: flex-end;
+  justify-content: flex-start;
   background-color: rgb(99, 145, 230);
 }
 
 #other .message-details {
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-right: 5px;
 }
 
